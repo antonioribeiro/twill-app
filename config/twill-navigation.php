@@ -8,7 +8,12 @@ return [
             'authors' => [
                 'title' => 'Authors',
                 'module' => true,
-            ]
+            ],
         ],
+    ],
+
+    'categories' => [
+        'title' => 'Categories',
+        'route' => 'admin.categories.index',
     ],
 ];

@@ -15,16 +15,40 @@ class AuthorController extends ModuleController
         'edit' => true,
         'publish' => true,
         'bulkPublish' => true,
-        'feature' => false,
+        'feature' => true,
         'bulkFeature' => false,
         'restore' => true,
         'bulkRestore' => true,
         'delete' => true,
         'bulkDelete' => true,
-        'reorder' => false,
+        'reorder' => true,
         'permalink' => true,
         'bulkEdit' => true,
         'editInModal' => false,
+    ];
+
+    protected $indexColumns = [
+        'avatar' => [
+            'thumb' => true,
+
+            'variant' => [
+                'role' => 'featured',
+                'crop' => 'default',
+            ],
+        ],
+
+        'name' => [
+            'field' => 'name',
+            'title' => 'Name',
+            'sort' => true,
+            'visible' => true,
+        ],
+
+        'birthday' => [
+            'field' => 'birthday',
+            'title' => 'Birth day',
+            'sort' => true,
+        ],
     ];
 
     protected function previewData($item)

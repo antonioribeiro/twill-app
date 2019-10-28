@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-use A17\Twill\Repositories\Behaviors\HandleTags;
 use A17\Twill\Repositories\Behaviors\HandleBlocks;
 use A17\Twill\Repositories\Behaviors\HandleTranslations;
 use A17\Twill\Repositories\Behaviors\HandleSlugs;
@@ -10,13 +9,13 @@ use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\Behaviors\HandleFiles;
 use A17\Twill\Repositories\Behaviors\HandleRevisions;
 use A17\Twill\Repositories\ModuleRepository;
-use App\Models\Author;
+use App\Models\Category;
 
-class AuthorRepository extends ModuleRepository
+class CategoryRepository extends ModuleRepository
 {
-    use HandleBlocks, HandleTranslations, HandleSlugs, HandleMedias, HandleFiles, HandleRevisions, HandleTags;
+    use HandleBlocks, HandleTranslations, HandleSlugs, HandleMedias, HandleFiles, HandleRevisions;
 
-    public function __construct(Author $model)
+    public function __construct(Category $model)
     {
         $this->model = $model;
     }

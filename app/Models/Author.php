@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use A17\Twill\Models\Behaviors\HasBlocks;
+use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\HasTranslation;
 use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
@@ -13,7 +14,7 @@ use A17\Twill\Models\Model;
 
 class Author extends Model implements Sortable
 {
-    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasRevisions;
+    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasRevisions, HasPosition;
 
     protected $fillable = [
         'published',
@@ -21,10 +22,15 @@ class Author extends Model implements Sortable
         'description',
         'bio',
         'birthday',
-        // 'public',
-        // 'featured',
-        // 'publish_start_date',
-        // 'publish_end_date',
+        'featured',
+        'position',
+        'public',
+        'publish_start_date',
+        'publish_end_date',
+    ];
+
+    protected $casts = [
+        'featured' => 'boolean',
     ];
 
     // uncomment and modify this as needed if you use the HasTranslation trait
@@ -57,14 +63,4 @@ class Author extends Model implements Sortable
             ],
         ],
     ];
-
-    public function scopeOrdered($query)
-    {
-        // TODO: Implement scopeOrdered() method.
-    }
-
-    public static function setNewOrder($ids, $startOrder = 1)
-    {
-        // TODO: Implement setNewOrder() method.
-    }
 }

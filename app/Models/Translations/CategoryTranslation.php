@@ -4,20 +4,14 @@ namespace App\Models\Translations;
 
 use A17\Twill\Models\Model;
 
-class AuthorTranslation extends Model
+class CategoryTranslation extends Model
 {
     protected $fillable = [
-        'name',
+        'title',
         'description',
-        'bio',
         'active',
         'locale',
     ];
 
     protected $casts = ['active' => 'boolean'];
-
-    public function author()
-    {
-        return $this->belongsTo(Author::class);
-    }
 }
