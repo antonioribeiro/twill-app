@@ -50,7 +50,9 @@ return [
 
         'libraries' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/media-library'),
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
         ],
 
         'public' => [

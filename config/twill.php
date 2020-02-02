@@ -2,13 +2,13 @@
 
 return [
     'namespace' => 'App',
-    'admin_app_url' => '',
-    'admin_app_path' => 'twill',
-    'admin_middleware_group' => 'web',
-    'bind_exception_handler' => false,
-    'users_table' => 'twill_users',
-    'password_resets_table' => 'twill_password_resets',
-    'auth_login_redirect_path' => '/twill',
+//    'admin_app_url' => env('ADMIN_APP_URL'),
+//    'admin_app_path' => env('ADMIN_APP_PATH'),
+//    'admin_middleware_group' => 'web',
+//    'bind_exception_handler' => false,
+//    'users_table' => 'twill_users',
+//    'password_resets_table' => 'twill_password_resets',
+    'auth_login_redirect_path' => '/'.env('ADMIN_APP_PATH'),
     'enabled' => [
         'users-management' => true,
         'media-library' => true,
@@ -62,7 +62,7 @@ return [
         ],
     ],
     'media_library' => [
-        'disk' => 'libraries',
+        'disk' => env('MEDIA_LIBRARY_DISK', 'libraries'),
         'endpoint_type' => 'local',
         'cascade_delete' => env('MEDIA_LIBRARY_CASCADE_DELETE', false),
         'local_path' => env('MEDIA_LIBRARY_LOCAL_PATH'),
@@ -103,7 +103,7 @@ return [
         'sign_key' => env('IMGIX_SIGN_KEY'),
     ],
     'file_library' => [
-        'disk' => 'libraries',
+        'disk' => env('MEDIA_LIBRARY_DISK', 'libraries'),
         'endpoint_type' => 'local',
         'cascade_delete' => env('FILE_LIBRARY_CASCADE_DELETE', false),
         'local_path' => env('FILE_LIBRARY_LOCAL_PATH'),
