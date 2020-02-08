@@ -53,6 +53,7 @@ class AuthorController extends ModuleController
 
     protected function previewData($item)
     {
+
         return [
             'project' => $item,
             'setting_name' => $settingRepository->byKey('setting_name')

@@ -61,18 +61,6 @@ return [
             ],
         ],
     ],
-    'media_library' => [
-        'disk' => env('MEDIA_LIBRARY_DISK', 'libraries'),
-        'endpoint_type' => 'local',
-        'cascade_delete' => env('MEDIA_LIBRARY_CASCADE_DELETE', false),
-        'local_path' => env('MEDIA_LIBRARY_LOCAL_PATH'),
-        'image_service' => env('MEDIA_LIBRARY_IMAGE_SERVICE', 'A17\Twill\Services\MediaLibrary\Imgix'),
-        'acl' => env('MEDIA_LIBRARY_ACL', 'private'),
-        'filesize_limit' => env('MEDIA_LIBRARY_FILESIZE_LIMIT', 50),
-        'allowed_extensions' => ['svg', 'jpg', 'gif', 'png', 'jpeg'],
-        'init_alt_text_from_filename' => true,
-        'translated_form_fields' => false,
-    ],
     'imgix' => [
         'default_params' => [
             'fm' => 'jpg',
@@ -112,36 +100,36 @@ return [
         'filesize_limit' => env('FILE_LIBRARY_FILESIZE_LIMIT', 50),
         'allowed_extensions' => [],
     ],
-    'glide' => [
-        'source' => env('GLIDE_SOURCE', storage_path('app/public/' . config('twill.media_library.local_path'))),
-        'cache' => env('GLIDE_CACHE', storage_path('app')),
-        'cache_path_prefix' => env('GLIDE_CACHE_PATH_PREFIX', 'glide_cache'),
-        'base_url' => env('GLIDE_BASE_URL'),
-        'base_path' => env('GLIDE_BASE_PATH', 'img'),
-        'use_signed_urls' => env('GLIDE_USE_SIGNED_URLS', false),
-        'sign_key' => env('GLIDE_SIGN_KEY'),
-        'default_params' => [
-            'fm' => 'jpg',
-            'q' => '80',
-            'fit' => 'max',
-        ],
-        'lqip_default_params' => [
-            'fm' => 'gif',
-            'blur' => 100,
-            'dpr' => 1,
-        ],
-        'social_default_params' => [
-            'fm' => 'jpg',
-            'w' => 900,
-            'h' => 470,
-            'fit' => 'crop',
-        ],
-        'cms_default_params' => [
-            'q' => '60',
-            'dpr' => '1',
-        ],
-        'presets' => []
-    ],
+//    'glide' => [
+//        'source' => env('GLIDE_SOURCE', storage_path('app/public/' . config('twill.media_library.local_path'))),
+//        'cache' => env('GLIDE_CACHE', storage_path('app')),
+//        'cache_path_prefix' => env('GLIDE_CACHE_PATH_PREFIX', 'glide_cache'),
+//        'base_url' => env('GLIDE_BASE_URL'),
+//        'base_path' => env('GLIDE_BASE_PATH', 'img'),
+//        'use_signed_urls' => env('GLIDE_USE_SIGNED_URLS', false),
+//        'sign_key' => env('GLIDE_SIGN_KEY'),
+//        'default_params' => [
+//            'fm' => 'jpg',
+//            'q' => '80',
+//            'fit' => 'max',
+//        ],
+//        'lqip_default_params' => [
+//            'fm' => 'gif',
+//            'blur' => 100,
+//            'dpr' => 1,
+//        ],
+//        'social_default_params' => [
+//            'fm' => 'jpg',
+//            'w' => 900,
+//            'h' => 470,
+//            'fit' => 'crop',
+//        ],
+//        'cms_default_params' => [
+//            'q' => '60',
+//            'dpr' => '1',
+//        ],
+//        'presets' => []
+//    ],
 
     'dashboard' => [
         'modules' => [
