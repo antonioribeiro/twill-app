@@ -15,6 +15,13 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+
+    'developer' => [
+        'name' => env('DEVELOPER_NAME', 'AREA 17 Developer'),
+        'email' => env('DEVELOPER_EMAIL', 'dev@area17.com'),
+        'password' => env('DEVELOPER_PASSWORD', 'secret'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
