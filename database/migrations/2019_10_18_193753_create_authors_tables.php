@@ -11,13 +11,8 @@ class CreateAuthorsTables extends Migration
             // this will create an id, a "published" column, and soft delete and timestamps columns
             createDefaultTableFields($table);
 
-            // feel free to modify the name of this column, but title is supported by default (you would need to specify the name of the column Twill should consider as your "title" column in your module controller if you change it)
-            //$table->string('name')->nullable();
+            $table->string('name')->nullable();
 
-            // your generated model and form include a description field, to get you started, but feel free to get rid of it if you don't need it
-            // $table->text('description')->nullable();
-
-            // $table->text('bio')->nullable();
             $table->date('birthday')->nullable();
 
             // Featured
@@ -38,9 +33,6 @@ class CreateAuthorsTables extends Migration
         Schema::create('author_translations', function (Blueprint $table) {
             createDefaultTranslationsTableFields($table, 'author');
             // add some translated fields
-            $table->string('name')->nullable();
-
-            $table->text('description')->nullable();
 
             $table->text('bio')->nullable();
         });

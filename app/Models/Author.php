@@ -19,7 +19,6 @@ class Author extends Model implements Sortable
     protected $fillable = [
         'published',
         'name',
-        'description',
         'bio',
         'birthday',
         'featured',
@@ -34,7 +33,7 @@ class Author extends Model implements Sortable
     ];
 
     // uncomment and modify this as needed if you use the HasTranslation trait
-    public $translatedAttributes = ['name', 'description', 'active', 'bio'];
+    public $translatedAttributes = ['active', 'bio'];
 
     // uncomment and modify this as needed if you use the HasSlug trait
     public $slugAttributes = ['name'];

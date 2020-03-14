@@ -12,8 +12,18 @@ return [
         ],
     ],
 
+    'artists' => [
+        'title' => 'Artists',
+        'module' => true
+    ],
+
     'categories' => [
         'title' => 'Categories',
         'route' => 'admin.categories.index',
+    ],
+
+    'photographers' => [
+        'title' => 'Photographers',
+        'route' => 'admin.photographers.index',
     ],
 ];

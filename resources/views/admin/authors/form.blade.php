@@ -4,7 +4,7 @@
     @formField('input', [
         'name' => 'description',
         'label' => 'Description',
-        'translated' => true,
+        'translated' => false,
         'maxlength' => 100
     ])
 
@@ -17,9 +17,13 @@
     @formField('input', [
         'name' => 'bio',
         'label' => 'Bio',
-        'translated' => true,
+        'translated' => false,
         'type' => 'textarea'
     ])
 
-    @formField('block_editor')
+    @formField('block_editor', [
+        'blocks' => [
+            'mega-carousel',
+        ]
+    ])
 @stop
